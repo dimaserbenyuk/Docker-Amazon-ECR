@@ -52,7 +52,7 @@ jobs:
           image-ref: '190414514902.dkr.ecr.eu-central-1.amazonaws.com/github:${{ github.sha }}'
           # format: 'sarif'
           output: 'trivy-results.sarif'
-          format: 'table,sarif'
+          format: 'table'
           exit-code: '1'
           ignore-unfixed: true
           vuln-type: 'os,library'
