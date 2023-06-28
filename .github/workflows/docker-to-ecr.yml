@@ -50,13 +50,9 @@ jobs:
         uses: aquasecurity/trivy-action@master
         with:
           image-ref: '190414514902.dkr.ecr.eu-central-1.amazonaws.com/github:${{ github.sha }}'
-          # format: 'sarif'
+          format: 'sarif'
           output: 'trivy-results.sarif'
-          format: 'table'
-          exit-code: '1'
           ignore-unfixed: true
-          vuln-type: 'os,library'
-          severity: 'CRITICAL,HIGH'
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
