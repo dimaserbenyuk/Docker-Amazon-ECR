@@ -14,7 +14,6 @@ RUN go build -o /myapp main.go
 
 FROM debian:stable
 
-
 COPY --from=build /myapp /myapp
 
 ENTRYPOINT ["/myapp"]
